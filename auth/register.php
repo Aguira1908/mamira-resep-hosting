@@ -10,6 +10,7 @@ if(isset($_POST['register'])){
     $nama = $_POST['nama'];
     $email = $_POST['email'];
     $password = $_POST['password'];
+    $hashed_password = password_hash($password, PASSWORD_DEFAULT);
 
     $cek = "SELECT * FROM users WHERE email='$email'";
 
@@ -30,7 +31,7 @@ if(isset($_POST['register'])){
         INSERT INTO users
         (nama,email,password,role)
         VALUES
-        ('$nama','$email','$password','user')
+        ('$nama','$email','$hashed_password','user')
         ";
 
         $insert = oci_parse($conn,$query);

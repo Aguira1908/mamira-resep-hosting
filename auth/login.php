@@ -13,20 +13,17 @@ $query = "
 SELECT *
 FROM users
 WHERE email = :email
-AND password = :password
 ";
 
 $parse = oci_parse($conn,$query);
 
 oci_bind_by_name($parse,":email",$email);
 
-oci_bind_by_name($parse,":password",$password);
-
 oci_execute($parse);
 
 $data = oci_fetch_assoc($parse);
 
-if($data){
+if($data && password_verify($password, $data['PASSWORD'])){
 
 $_SESSION['user'] = $data;
 
