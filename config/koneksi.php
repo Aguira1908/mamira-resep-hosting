@@ -1,21 +1,18 @@
 <?php
 
-$conn = oci_connect(
-    'system',
-    '111006',
-    'localhost/FREEPDB1'
-);
+// Kredensial dari VPS
+$username = "mamira_resep";
+$password = "PassMamira123";
+$host = "127.0.0.2";
+$port = "1521";
+$service = "xepdb1";
+
+// Format connection string Oracle: host:port/service
+$tns = $host . ':' . $port . '/' . $service;
+
+$conn = oci_connect($username, $password, $tns);
 
 if (!$conn) {
-
-    $e = oci_error();
-
-    echo "Koneksi gagal";
-    
-} else {
-
-    echo " ";
-
+  $e = oci_error();
+  echo "Koneksi gagal: " . htmlentities($e['message'], ENT_QUOTES);
 }
-
-?>

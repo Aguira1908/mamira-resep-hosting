@@ -9,36 +9,32 @@ $password = $_POST['password'];
 
 $query = "SELECT * FROM users WHERE email = :email";
 
-$parse = oci_parse($conn,$query);
+$parse = oci_parse($conn, $query);
 
-oci_bind_by_name($parse,":email",$email);
+oci_bind_by_name($parse, ":email", $email);
 
 oci_execute($parse);
 
 $data = oci_fetch_assoc($parse);
 
-if($data){
+if ($data) {
 
-    if(password_verify($password,$data['PASSWORD'])){
+  if (password_verify($password, $data['PASSWORD'])) {
 
-        $_SESSION['user'] = $data;
+    $_SESSION['user'] = $data;
 
-        if($data['ROLE'] == "admin"){
+    if ($data['ROLE'] == "admin") {
 
-            header("Location: ../admin/dashboard.php");
+      header("Location: ../admin/dashboard.php");
+    } else {
 
-        }else{
-
-            header("Location: ../index.php");
-        }
-
-    }else{
-
-        echo "Password salah";
+      header("Location: ../index.php");
     }
+  } else {
 
-}else{
+    echo "Password salah";
+  }
+} else {
 
-    echo "Email tidak ditemukan";
+  echo "Email tidak ditemukan";
 }
-?>
