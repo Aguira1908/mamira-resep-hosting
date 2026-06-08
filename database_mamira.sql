@@ -487,16 +487,24 @@ VALUES (
 -- ============================================================
 
 INSERT INTO menu_makanan (id, nama_menu, kategori, harga, gambar, deskripsi)
-VALUES (seq_menu_makanan_id.NEXTVAL, 'Nasi Box Premium', 'Catering',
-    35000, 'nasi-box.jpg', 'Nasi box premium dengan lauk lengkap pilihan chef');
+VALUES (seq_menu_makanan_id.NEXTVAL, 'Ayam Panggang', 'Catering',
+    35000, 'ayampanggang.jpg', 'Ayam panggang spesial dengan bumbu rahasia');
 
 INSERT INTO menu_makanan (id, nama_menu, kategori, harga, gambar, deskripsi)
-VALUES (seq_menu_makanan_id.NEXTVAL, 'Snack Box Mini', 'Snack',
-    15000, 'snack-box.jpg', 'Snack box berisi kue pilihan untuk acara Anda');
+VALUES (seq_menu_makanan_id.NEXTVAL, 'Ayam Rendang', 'Catering',
+    40000, 'ayamrendang.jpg', 'Ayam rendang lezat khas padang');
 
 INSERT INTO menu_makanan (id, nama_menu, kategori, harga, gambar, deskripsi)
-VALUES (seq_menu_makanan_id.NEXTVAL, 'Nasi Tumpeng', 'Catering',
-    250000, 'tumpeng.jpg', 'Tumpeng lengkap dengan lauk pauk tradisional');
+VALUES (seq_menu_makanan_id.NEXTVAL, 'Bolu Jadul', 'Snack',
+    15000, 'bolujadul.jpg', 'Bolu panggang jadul yang lembut dan manis');
+
+INSERT INTO menu_makanan (id, nama_menu, kategori, harga, gambar, deskripsi)
+VALUES (seq_menu_makanan_id.NEXTVAL, 'Soto Ayam', 'Catering',
+    25000, 'sotoayam.jpg', 'Soto ayam segar dengan kuah kaldu nikmat');
+
+INSERT INTO menu_makanan (id, nama_menu, kategori, harga, gambar, deskripsi)
+VALUES (seq_menu_makanan_id.NEXTVAL, 'Nasi Uduk', 'Catering',
+    20000, 'nasiuduk.jpg', 'Nasi uduk gurih dengan lauk pauk komplit');
 
 
 COMMIT;
