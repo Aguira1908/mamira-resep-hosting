@@ -506,6 +506,38 @@ INSERT INTO menu_makanan (id, nama_menu, kategori, harga, gambar, deskripsi)
 VALUES (seq_menu_makanan_id.NEXTVAL, 'Nasi Uduk', 'Catering',
     20000, 'nasiuduk.jpg', 'Nasi uduk gurih dengan lauk pauk komplit');
 
+INSERT INTO menu_makanan (id, nama_menu, kategori, harga, gambar, deskripsi)
+VALUES (seq_menu_makanan_id.NEXTVAL, 'Bumbu Urap Lawas', 'Catering',
+    15000, 'bumbu-urap-lawas.jpeg', 'Bumbu urap tradisional khas Jawa dengan kelapa parut gurih dan wangi rempah');
+
+INSERT INTO menu_makanan (id, nama_menu, kategori, harga, gambar, deskripsi)
+VALUES (seq_menu_makanan_id.NEXTVAL, 'Paket Ikan Panggang', 'Catering',
+    45000, 'paket-ikan-panggang.jpeg', 'Paket ikan panggang segar lengkap dengan nasi, lalapan segar, dan sambal khas');
+
+INSERT INTO menu_makanan (id, nama_menu, kategori, harga, gambar, deskripsi)
+VALUES (seq_menu_makanan_id.NEXTVAL, 'Bawang Goreng Original', 'Snack',
+    25000, 'bawang-goreng-original.jpeg', 'Bawang goreng renyah original premium tanpa campuran tepung, gurih dan harum');
+
+INSERT INTO menu_makanan (id, nama_menu, kategori, harga, gambar, deskripsi)
+VALUES (seq_menu_makanan_id.NEXTVAL, 'Keripik Kentang Pedas Gurih', 'Snack',
+    20000, 'keripik-kentang-pedas-gurih.jpeg', 'Keripik kentang tipis renyah dengan balutan bumbu pedas manis gurih yang nikmat');
+
+INSERT INTO menu_makanan (id, nama_menu, kategori, harga, gambar, deskripsi)
+VALUES (seq_menu_makanan_id.NEXTVAL, 'Paket Rendang Daging', 'Catering',
+    50000, 'paket-rendang-daging.jpeg', 'Paket rendang daging sapi empuk dengan bumbu otentik kaya rempah, disajikan bersama nasi');
+
+INSERT INTO menu_makanan (id, nama_menu, kategori, harga, gambar, deskripsi)
+VALUES (seq_menu_makanan_id.NEXTVAL, 'Rujak Serut', 'Snack',
+    18000, 'rujak-serut.jpeg', 'Rujak serut aneka buah segar pilihan dengan kuah bumbu asam manis pedas yang menyegarkan');
+
+INSERT INTO menu_makanan (id, nama_menu, kategori, harga, gambar, deskripsi)
+VALUES (seq_menu_makanan_id.NEXTVAL, 'Susu Merah Muda', 'Snack',
+    12000, 'susu-merah-muda.jpeg', 'Susu segar rasa stroberi yang manis, creamy, dingin, dan menyegarkan');
+
+INSERT INTO menu_makanan (id, nama_menu, kategori, harga, gambar, deskripsi)
+VALUES (seq_menu_makanan_id.NEXTVAL, 'Kopi Susu Cincau', 'Snack',
+    15000, 'kopi-susu-cincau.jpeg', 'Perpaduan kopi susu premium yang creamy dengan potongan cincau hitam segar');
+
 
 COMMIT;
 
