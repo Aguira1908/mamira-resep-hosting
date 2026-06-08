@@ -1,8 +1,8 @@
 <?php
 
 // Kredensial dari VPS
-$username = "mamira_resep";
-$password = "PassMamira123";
+$username = "mamira_resep_green";
+$password = "PassMamiraGreen123";
 $host = "127.0.0.2";
 $port = "1521";
 $service = "xepdb1";
