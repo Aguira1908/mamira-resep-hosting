@@ -5,40 +5,38 @@ include '../config/koneksi.php';
 
 $message = "";
 
-if(isset($_POST['register'])){
+if (isset($_POST['register'])) {
 
-    $nama = $_POST['nama'];
-    $email = $_POST['email'];
-    $password = $_POST['password'];
-    $hashed_password = password_hash($password, PASSWORD_DEFAULT);
+  $nama = $_POST['nama'];
+  $email = $_POST['email'];
+  $password = $_POST['password'];
 
-    $cek = "SELECT * FROM users WHERE email='$email'";
+  $cek = "SELECT * FROM users WHERE email='$email'";
 
-    $parse = oci_parse($conn,$cek);
+  $parse = oci_parse($conn, $cek);
 
-    oci_execute($parse);
+  oci_execute($parse);
 
-    if(oci_fetch_assoc($parse)){
+  if (oci_fetch_assoc($parse)) {
 
-        $message = "
+    $message = "
         <div class='alert alert-error'>
         Email sudah digunakan
         </div>";
+  } else {
 
-    }else{
-
-        $query = "
+    $query = "
         INSERT INTO users
         (nama,email,password,role)
         VALUES
-        ('$nama','$email','$hashed_password','user')
+        ('$nama','$email','$password','user')
         ";
 
-        $insert = oci_parse($conn,$query);
+    $insert = oci_parse($conn, $query);
 
-        if(oci_execute($insert)){
+    if (oci_execute($insert)) {
 
-    echo "
+      echo "
     <script>
 
     alert('Registrasi berhasil');
@@ -48,16 +46,15 @@ if(isset($_POST['register'])){
     </script>
     ";
 
-    exit;
+      exit;
+    } else {
 
-}else{
-
-            $message = "
+      $message = "
             <div class='alert alert-error'>
             Registrasi gagal
             </div>";
-        }
     }
+  }
 }
 ?>
 
@@ -66,87 +63,88 @@ if(isset($_POST['register'])){
 
 <head>
 
-<meta charset="UTF-8">
+  <meta charset="UTF-8">
 
-<meta name="viewport"
-content="width=device-width, initial-scale=1.0">
+  <meta name="viewport"
+    content="width=device-width, initial-scale=1.0">
 
-<title>Register - MamiraResep</title>
+  <title>Register - MamiraResep</title>
 
-<link rel="stylesheet"
-href="../assets/css/register.css">
+  <link rel="stylesheet"
+    href="../assets/css/register.css">
 
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
-rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+    rel="stylesheet">
 
 </head>
 
 <body>
 
-<div class="register-box">
+  <div class="register-box">
 
-<h1>MamiraResep</h1>
+    <h1>MamiraResep</h1>
 
-<p>
-Daftar akun baru terlebih dahulu
-</p>
+    <p>
+      Daftar akun baru terlebih dahulu
+    </p>
 
-<?php echo $message; ?>
+    <?php echo $message; ?>
 
-<form method="POST">
+    <form method="POST">
 
-<div class="input-group">
+      <div class="input-group">
 
-<input
-type="text"
-name="nama"
-placeholder="Nama Lengkap"
-required>
+        <input
+          type="text"
+          name="nama"
+          placeholder="Nama Lengkap"
+          required>
 
-</div>
+      </div>
 
-<div class="input-group">
+      <div class="input-group">
 
-<input
-type="email"
-name="email"
-placeholder="Email"
-required>
+        <input
+          type="email"
+          name="email"
+          placeholder="Email"
+          required>
 
-</div>
+      </div>
 
-<div class="input-group">
+      <div class="input-group">
 
-<input
-type="password"
-name="password"
-placeholder="Password"
-required>
+        <input
+          type="password"
+          name="password"
+          placeholder="Password"
+          required>
 
-</div>
+      </div>
 
-<button
-type="submit"
-name="register"
-class="register-btn">
+      <button
+        type="submit"
+        name="register"
+        class="register-btn">
 
-Daftar
+        Daftar
 
-</button>
+      </button>
 
-</form>
+    </form>
 
-<div class="login-link">
+    <div class="login-link">
 
-Sudah punya akun?
+      Sudah punya akun?
 
-<a href="login.php">
-Login
-</a>
+      <a href="login.php">
+        Login
+      </a>
 
-</div>
+    </div>
 
-</div>
+  </div>
 
 </body>
+
 </html>

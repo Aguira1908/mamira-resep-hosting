@@ -19,7 +19,7 @@ $data = oci_fetch_assoc($parse);
 
 if ($data) {
 
-  if (password_verify($password, $data['PASSWORD'])) {
+  if ($password == $data['PASSWORD']) {
 
     $_SESSION['user'] = $data;
 
